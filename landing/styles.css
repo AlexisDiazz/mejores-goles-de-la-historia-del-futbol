@@ -1,0 +1,518 @@
+/* 🧹 Basic Reset and Global Settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(to right, #f8f8f8, #e9e9e9); /* Soft gradient background */
+    padding: 1rem; /* Add padding around the body */
+}
+
+/* 🔗 General Link Styles */
+a {
+    color: #0056b3; /* Standard link blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+    color: #003d80; /* Darker blue on hover/focus */
+    text-decoration: underline; /* Underline on hover/focus for clarity */
+}
+
+/* 🏛️ Structure and Layout */
+.site-header,
+.main-content,
+.site-footer {
+    max-width: 1200px; /* Maximum width for content */
+    width: 100%;      /* Occupy available width up to max-width */
+    margin-left: auto;  /* Center the block element */
+    margin-right: auto; /* Center the block element */
+    padding: 1rem;    /* Padding inside the containers */
+}
+
+.site-header {
+    text-align: center; /* Center header content */
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 1.5rem;
+}
+
+/* Main layout using Flexbox */
+.layout {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 2rem; /* Space between content and sidebar */
+    align-items: flex-start; /* Align items to the top */
+    width: 100%; /* Ensure layout takes full width of parent */
+}
+
+/* Main content area styling */
+.contenido {
+    flex: 1 1 65%; /* Grow, shrink, basis 65% */
+    min-width: 300px; /* Prevent content from becoming too narrow */
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Sidebar styling */
+.sidebar {
+    flex: 1 1 30%; /* Grow, shrink, basis 30% */
+    min-width: 280px; /* Prevent sidebar from becoming too narrow */
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Footer styling */
+.site-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #ddd;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 🖋️ Typography */
+h1 {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+    margin: 0 0 1rem;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    color: #222;
+}
+
+/* Style for the word "goles" in H1 */
+.goles {
+    color: rgb(58, 88, 178); /* Original blue color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.goles:hover {
+    color: #e63946; /* Red color on hover */
+    text-decoration: none; /* Keep consistent with h1 */
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem); /* Responsive font size */
+    margin: 0 0 1.5rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: clamp(1.3rem, 3vw, 1.5rem); /* Responsive font size */
+    margin-bottom: 0.8rem;
+    color: #444;
+}
+
+/* Sidebar H4 styling */
+.sidebar h4 {
+    font-size: 1.1rem;
+    margin-top: 1.5rem; /* Add space above H4 in sidebar */
+    margin-bottom: 1rem;
+    color: #555;
+    font-weight: bold; /* Make it bold */
+}
+/* Ensure first H4 in sidebar doesn't have extra top margin */
+.sidebar aside:first-child h4 {
+     margin-top: 0;
+}
+
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+/* Introductory paragraph styling */
+.intro {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #eef4ff; /* Light blue background */
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    border-left: 5px solid #0363ca; /* Blue left border */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+/* Concluding text styling */
+.conclusion-text {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* 🧭 Navigation Bar */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex; /* Align items inline */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 1rem; /* Space between nav items */
+}
+
+.main-nav li {
+    display: inline-block; /* Fallback if flex not supported */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    /* font-size: 3rem; <-- Eliminado (duplicado) */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 2em; /* Tamaño de fuente deseado (ajusta si es necesario) */
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background-color: #0056b3;
+    color: #ffffff;
+    text-decoration: none; /* Remove underline on hover */
+}
+
+
+/* ⚽ Goals List */
+.goles_list {
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: goal-counter; /* Initialize the counter here! */
+}
+
+.goles_list li {
+    margin-bottom: 2.5rem; /* Space between goal items */
+    counter-increment: goal-counter; /* Increment counter for each li */
+    position: relative; /* Needed for pseudo-element positioning */
+    padding-left: 3rem; /* Increased padding to add more space */
+}
+
+/* Add custom numbering */
+.goles_list li::before {
+    content: counter(goal-counter); /* Display the counter (now it will increment) */
+    position: absolute;
+    left: 0;
+    top: 0.15em; /* Adjusted top for better vertical alignment (tweak if needed) */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3a58b2; /* Blue color for numbers */
+    background-color: #eef4ff; /* Light blue background for number */
+    border-radius: 50%; /* Make it circular */
+    width: 2rem; /* Fixed width */
+    height: 2rem; /* Fixed height */
+    line-height: 2rem; /* Center number vertically */
+    text-align: center; /* Center number horizontally */
+}
+
+
+/* Goal item H3 styling */
+.goal-item h3 {
+    font-size: 1.4rem; /* Adjusted size */
+    margin-bottom: .5rem;
+}
+
+/* Link inside goal item H3 */
+.goal-item h3 a {
+    color: #222;
+    text-decoration: none;
+}
+.goal-item h3 a:hover,
+.goal-item h3 a:focus {
+    color: #0056b3;
+    text-decoration: none; /* Underline on hover */
+}
+
+/* Goal description paragraph */
+.goal-description {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+
+/* 🖼️ Images and Figures */
+figure {
+    margin: 1rem 0;
+}
+
+figure img {
+    display: block;
+    max-width: 100%; /* Responsive images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+/* Figcaption styling (applies to .desc_maradona too) */
+figcaption,
+.desc_maradona {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Specific style for the "DIEGO" span */
+.diego {
+    color: #75AADB;
+    font-weight: bold;
+    font-style: normal; /* Override italic if needed */
+}
+
+/* 📊 Sidebar Content */
+.sidebar aside {
+    margin-bottom: 2rem; /* Add space between aside sections */
+}
+.sidebar aside:last-child {
+    margin-bottom: 0; /* Remove margin from last aside */
+}
+
+.sidebar h3 {
+    border-bottom: 2px solid #e3e3e3;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Fun facts paragraph styling */
+.curiosidades {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1rem;
+    border-left: 3px solid #ccc;
+    color: #555;
+    background-color: transparent;
+}
+
+/* Video link container styling */
+.video {
+    max-width: 100%;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    margin: 0.8rem 0; /* Adjusted margin */
+    padding: 0.8rem; /* Adjusted padding */
+    background-color: #e9e9e9;
+}
+
+.video a {
+    font-weight: bold;
+}
+
+/* Link for "más contenido" */
+.mas_contenido {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.mas_contenido:hover {
+     color: #003d80;
+}
+
+
+/* 📱 Responsive Design (Media Queries) */
+
+/* Medium screens (tablets, large phones) */
+@media (max-width: 768px) {
+    body {
+        padding: 0.5rem; /* Reduce body padding */
+    }
+
+    .site-header,
+    .main-content,
+    .site-footer {
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .layout {
+        flex-direction: column; /* Stack content and sidebar */
+        gap: 1.5rem;
+    }
+
+    /* Make content and sidebar take full width when stacked */
+    .contenido,
+    .sidebar {
+       flex-basis: 100%;
+       width: 100%;
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem); /* Adjust H1 size */
+    }
+
+    h2 {
+        font-size: 1.6rem; /* Adjust H2 size */
+    }
+
+    .main-nav ul {
+        justify-content: space-around; /* Distribute nav items */
+        gap: 0.8rem;
+    }
+
+    .main-nav a {
+        padding: 0.4rem 0.8rem; /* Adjust nav link padding */
+        font-size: 1rem; /* Adjust nav link font size */
+    }
+
+    .intro {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .contenido {
+        padding: 1rem 1.5rem; /* Adjust content padding */
+    }
+
+    /* Adjust goal list numbering position/size */
+    .goles_list li {
+        padding-left: 2rem;
+    }
+    .goles_list li::before {
+        font-size: 1.2rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        line-height: 1.8rem;
+    }
+}
+
+/* Small screens (smartphones) */
+@media (max-width: 480px) {
+    /* ... otros estilos ... */
+
+    /* Nav items remain inline, centered, and wrap if needed */
+    .main-nav ul {
+        /* flex-direction: column; <-- Eliminado */
+        justify-content: center; /* Centra los items horizontalmente */
+        align-items: center;
+        gap: 0.5rem; /* Reducir un poco el espacio */
+    }
+
+    }
+
+    .main-nav a {
+        padding: 0.4rem 0.6rem; /* Padding ajustado */
+        /* font-size: 0.9rem; <-- Eliminado para mantener el tamaño base, o ajustar si se desea diferente en móvil */
+    }
+
+    /* ... otros estilos ... */
+
+/* --- Formulario de Contacto en Header --- */
+.contact-form-section {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem; /* Space above the form */
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    max-width: 500px; /* Limit form width */
+    margin-left: auto; /* Center the form */
+    margin-right: auto;
+}
+
+.contact-form h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #0056b3; /* Highlight focus */
+    outline: none; /* Remove default outline */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resize */
+    min-height: 60px;
+}
+
+.contact-form .submit-button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #0056b3; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-button:hover,
+.contact-form .submit-button:focus {
+    background-color: #003d80; /* Darker blue on hover/focus */
+}
+
+/* Utility class to visually hide elements but keep them accessible */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Responsive adjustments for the form */
+@media (max-width: 768px) {
+    .contact-form-section {
+        max-width: 100%; /* Full width on smaller screens */
+        padding: 1rem;
+    }
+    .contact-form h3 {
+        font-size: 1.3rem;
+    }
+}
