@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 # Database configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(os.environ.get('HOME'), 'contact_form_submissions.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///contact_form_submissions.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking
 db = SQLAlchemy(app)
 # Define the model
