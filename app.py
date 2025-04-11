@@ -32,12 +32,13 @@ def index():
     """
     return send_from_directory(os.path.join(app.root_path, 'landing'), 'index.html')
 
-@app.route('/landing/<path:filename>')
+
+@app.route('/<path:filename>')
 def serve_static(filename):
     """
-    Sirve los archivos estáticos de la carpeta 'landing'.
+    Sirve los archivos estaticos desde la ruta raiz
     """
-    return send_from_directory(os.path.join(app.root_path, 'landing'), filename)
+    return send_from_directory(os.path.join(app.root_path), filename)
 
 @app.route('/explicacion_goles/<path:filename>')
 def serve_explicacion(filename):
