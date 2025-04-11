@@ -1,0 +1,45 @@
+/* 🎨 Fuente base */
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #fefefe;
+    color: #1a1a1a;
+    padding: 2rem;
+    max-width: 850px;
+    margin: 2rem auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* 💫 Animación sutil al pasar el mouse */
+body:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 🏆 Título */
+h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #232b42;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ✍️ Párrafo */
+p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* 🖱️ Texto interactivo opcional */
+p span:hover {
+    color: #d60000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+/* 📊 Tabla * /
