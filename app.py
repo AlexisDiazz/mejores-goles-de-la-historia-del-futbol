@@ -29,16 +29,19 @@ def receive_contact_data():
         message = request.form.get('message')       
         
         try:
-            new_submission = ContactFormSubmission(name=name, email=email, message=message)
-            db.session.add(new_submission)
-            db.session.commit()
-            print('New contact form submission saved to the database.')
-        print('Received contact form data:')
-        print(f'  Name: {name}')
-        print(f'  Email: {email}')
-        print(f'  Message: {message}')
-
-        return jsonify({'message': 'Form submitted successfully!'}), 200
+          new_submission = ContactFormSubmission(name=name, email=email, message=message)
+          db.session.add(new_submission)
+          db.session.commit()
+          print('New contact form submission saved to the database.')
+          print('Received contact form data:')
+          print(f'  Name: {name}')
+          print(f'  Email: {email}')
+          print(f'  Message: {message}')
+          return jsonify({'message': 'Form submitted successfully!'}), 200
+        except Exception as e:
+          db.session.rollback()  # Rollback in case of error
+          print(f'Error saving to database: {e}')
+          return jsonify({'error': 'Error saving form data.'}), 500  # Internal Server Error
     else:
         return jsonify({'error': 'Method not allowed'}), 405
 
