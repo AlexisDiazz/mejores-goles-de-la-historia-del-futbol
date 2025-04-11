@@ -67,7 +67,7 @@
     // Helper functions
     function isValidEmail(email) {
       // Basic email validation regex
-      return /^[w-]+(.[w-]+)*@([w-]+.)+[a-zA-Z]{2,7}$/.test(email);
+      return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
     }
 
     function showError(fieldId, errorMessage) {
